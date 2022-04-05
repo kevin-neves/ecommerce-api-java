@@ -1,5 +1,6 @@
 package com.example.ecommerce.model;
 
+import com.example.ecommerce.dto.UserDTO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,4 +24,12 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Authority> authorityList = new ArrayList<>();
+
+    public static User convert(UserDTO dto) {
+        User user = new User();
+        user.setUserName(dto.getUserName());
+        user.setPassword(dto.getPassword());
+        user.setEnabled(dto.getEnabled());
+        return user;
+    }
 }

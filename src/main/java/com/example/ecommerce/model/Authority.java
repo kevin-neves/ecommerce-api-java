@@ -21,4 +21,14 @@ public class Authority {
     @MapsId("userName")
     @JoinColumn(name = "username")
     private User user;
+
+    public static Authority convert(User user, String role) {
+        Authority authority = new Authority();
+
+        AuthorityKey authorityKey = new AuthorityKey(user.getUserName(), role);
+
+        authority.setAuthorityKey(authorityKey);
+        authority.setUser(user);
+        return authority;
+    }
 }
