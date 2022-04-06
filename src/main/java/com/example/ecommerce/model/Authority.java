@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 
 @Getter
@@ -24,9 +23,7 @@ public class Authority {
 
     public static Authority convert(User user, String role) {
         Authority authority = new Authority();
-
         AuthorityKey authorityKey = new AuthorityKey(user.getUserName(), role);
-
         authority.setAuthorityKey(authorityKey);
         authority.setUser(user);
         return authority;

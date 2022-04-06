@@ -1,11 +1,9 @@
 package com.example.ecommerce.controller;
 
-
 import com.example.ecommerce.dto.UserDTO;
 import com.example.ecommerce.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.security.Principal;
 
 @RestController
