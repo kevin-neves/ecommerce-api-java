@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -20,6 +21,10 @@ public class Customer {
 
     @Column(name = "customer_name")
     private String name;
+
+    @Column(name = "customer_code")
+    @GeneratedValue
+    private UUID customerUuid;
 
     @Column
     private String address;

@@ -22,6 +22,7 @@ public class Product {
     private String name;
 
     @Column(name = "product_code")
+    @GeneratedValue
     private UUID productUuid;
 
     @Column(name = "product_description")

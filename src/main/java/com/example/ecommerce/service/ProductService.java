@@ -28,20 +28,4 @@ public class ProductService {
     }
 
     public List<Customer> listCustomers() { return customerRepository.findAll(); }
-
-
-    // Função para popular o banco de dados com as UUIDs random
-//    public void createProductsUUIDandQuantity() {
-//        List<Product> productList = produtcRepository.findAll();
-//        for (Product product: productList) {
-//            UUID uuid = UUID.randomUUID();
-//            Integer quantity = getRandomNumber(1, 20);
-//            product.setProductUuid(uuid);
-//            product.setQuantity(quantity);
-//            produtcRepository.save(product);
-//        }
-//    }
-//    public int getRandomNumber(int min, int max) {
-//        return (int) ((Math.random() * (max - min)) + min);
-//    }
 }
