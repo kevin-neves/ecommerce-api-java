@@ -1,6 +1,5 @@
 package com.example.ecommerce.model;
 
-import com.example.ecommerce.dto.UserDTO;
 import com.example.ecommerce.dto.request.UserRequest;
 import lombok.Getter;
 import lombok.Setter;

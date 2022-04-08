@@ -14,6 +14,4 @@ public class UserRequest {
     private String password;
     private Boolean enabled;
     private List<String> roles;
-
-
 }

@@ -1,6 +1,5 @@
 package com.example.ecommerce.controller;
 
-import com.example.ecommerce.dto.UserDTO;
 import com.example.ecommerce.dto.request.UserRequest;
 import com.example.ecommerce.service.UserService;
 import lombok.RequiredArgsConstructor;

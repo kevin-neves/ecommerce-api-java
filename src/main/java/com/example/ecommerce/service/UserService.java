@@ -1,6 +1,5 @@
 package com.example.ecommerce.service;
 
-import com.example.ecommerce.dto.UserDTO;
 import com.example.ecommerce.dto.request.UserRequest;
 import com.example.ecommerce.model.Authority;
 import com.example.ecommerce.model.User;

@@ -1,6 +1,7 @@
 package com.example.ecommerce.service;
 
 import com.example.ecommerce.dto.request.ProductRequest;
+import com.example.ecommerce.dto.response.CustomerResponse;
 import com.example.ecommerce.dto.response.ProductResponse;
 import com.example.ecommerce.model.Customer;
 import com.example.ecommerce.model.Product;
@@ -43,5 +44,5 @@ public class ProductService {
         return new ProductResponse(produtcRepository.save(product));
     }
 
-    public List<Customer> listCustomers() { return customerRepository.findAll(); }
+    public List<CustomerResponse> listCustomers() { return CustomerResponse.toResponseList(customerRepository.findAll()); }
 }

@@ -24,7 +24,7 @@ public class ProductResponse {
     private Integer quantity;
 
     public ProductResponse(Product product){
-        this.productUuid = getProductUuid();
+        this.productUuid = product.getProductUuid();
         this.name = product.getName();
         this.description = product.getDescription();
         this.price = product.getPrice();
