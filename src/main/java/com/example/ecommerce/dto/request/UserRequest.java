@@ -1,14 +1,16 @@
-package com.example.ecommerce.dto;
+package com.example.ecommerce.dto.request;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.util.List;
 
 @Getter
 @Setter
-public class UserDTO {
-
-    private String userName;
+@AllArgsConstructor
+public class UserRequest {
+    private String username;
     private String password;
     private Boolean enabled;
     private List<String> roles;

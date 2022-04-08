@@ -1,6 +1,6 @@
 package com.example.ecommerce.controller;
 
-import com.example.ecommerce.dto.UserDTO;
+import com.example.ecommerce.dto.request.UserRequest;
 import com.example.ecommerce.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,7 @@ public class UserController {
     public Principal getUser(Principal principal) { return principal; }
 
     @PostMapping
-    public void saveUser(@RequestBody UserDTO userDTO) {
+    public void saveUser(@RequestBody UserRequest userDTO) {
         userService.createUser(userDTO);
     }
 }

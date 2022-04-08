@@ -1,6 +1,8 @@
 package com.example.ecommerce.controller;
 
-import com.example.ecommerce.model.Customer;
+import com.example.ecommerce.dto.request.ProductRequest;
+import com.example.ecommerce.dto.response.CustomerResponse;
+import com.example.ecommerce.dto.response.ProductResponse;
 import com.example.ecommerce.model.Product;
 import com.example.ecommerce.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -22,13 +24,12 @@ public class ProductController {
     }
 
     @GetMapping("/customers")
-    public List<Customer> getCustomers(){
-        List<Customer> customers = productService.listCustomers();
-        return customers;
+    public List<CustomerResponse> getCustomers(){
+        return productService.listCustomers();
     }
 
     @PostMapping("/")
-    public Product postProduct(@RequestBody Product product) {
+    public ProductResponse postProduct(@RequestBody ProductRequest product) {
         return productService.addProduct(product);
     }
 }

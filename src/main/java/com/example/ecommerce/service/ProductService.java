@@ -1,5 +1,8 @@
 package com.example.ecommerce.service;
 
+import com.example.ecommerce.dto.request.ProductRequest;
+import com.example.ecommerce.dto.response.CustomerResponse;
+import com.example.ecommerce.dto.response.ProductResponse;
 import com.example.ecommerce.model.Customer;
 import com.example.ecommerce.model.Product;
 import com.example.ecommerce.repository.CustomerRepository;
@@ -9,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -23,9 +27,22 @@ public class ProductService {
         return produtcRepository.findAll(pageable);
     }
 
-    public Product addProduct(Product product) {
-        return produtcRepository.save(product);
+    public ProductResponse addProduct(ProductRequest productRequest) {
+        Product product = Product.builder()
+                .productUuid(UUID.randomUUID())
+                .name(productRequest.getName())
+                .description(productRequest.getDescription())
+                .price(productRequest.getPrice())
+                .inStock(productRequest.getInStock())
+                .size(productRequest.getSize())
+                .color(productRequest.getColor())
+                .brand(productRequest.getBrand())
+                .quantity(productRequest.getQuantity())
+                .purchases(new ArrayList<>())
+                .build();
+
+        return new ProductResponse(produtcRepository.save(product));
     }
 
-    public List<Customer> listCustomers() { return customerRepository.findAll(); }
+    public List<CustomerResponse> listCustomers() { return CustomerResponse.toResponseList(customerRepository.findAll()); }
 }
