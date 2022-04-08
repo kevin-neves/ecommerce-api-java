@@ -1,6 +1,7 @@
 package com.example.ecommerce.service;
 
 import com.example.ecommerce.dto.UserDTO;
+import com.example.ecommerce.dto.request.UserRequest;
 import com.example.ecommerce.model.Authority;
 import com.example.ecommerce.model.User;
 import com.example.ecommerce.repository.AuthorityRepository;
@@ -18,9 +19,9 @@ public class UserService {
     private final PasswordEncoder encoder;
     private final String ROLE_PREFIX = "ROLE_";
 
-    public void createUser(UserDTO userDTO) {
+    public void createUser(UserRequest userDTO) {
         userDTO.setPassword(encoder.encode(userDTO.getPassword()));
-        User user = User.convert(userDTO);
+        User user = User.createFromRequest(userDTO);
         userRepository.save(user);
         userDTO.getRoles().forEach(role -> saveAuthority(user, role));
     }
